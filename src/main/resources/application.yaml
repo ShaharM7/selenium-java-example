@@ -1,0 +1,20 @@
+navigation:
+  url: https://opensource-demo.orangehrmlive.com/
+  loginRoute: login
+wait:
+  durationTimeout: 90
+  intervalTimeout: 5
+  implicitlyTimeout: 60
+  scriptTimeout: 30
+  pageLoadTimeout: 60
+browser:
+  options: |
+    --no-sandbox, --disable-dev-shm-usage, --disable-extensions, --disable-gpu,
+    --ignore-certificate-errors, --shm-size="2g"
+seleniumGrid:
+  useSeleniumGrid: true
+  url: "https://${BROWSERSTACK_USERNAME}:${BROWSERSTACK_ACCESS_KEY}@hub.browserstack.com/wd/hub"
+  osName: windows
+  osVersion: 10
+  browserName: chrome
+  browserVersion: 108

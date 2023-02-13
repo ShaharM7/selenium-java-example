@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+group 'Shahar'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.seleniumhq.selenium:selenium-java:4.8.0'
+    implementation 'org.springframework.boot:spring-boot-starter:3.0.0'
+
+    implementation 'io.rest-assured:rest-assured:5.1.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
+    implementation 'net.datafaker:datafaker:1.7.0'
+    implementation 'org.testng:testng:7.7.1'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testImplementation 'org.testng:testng:7.7.1'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
+}
+
+test {
+    useTestNG()
+}
