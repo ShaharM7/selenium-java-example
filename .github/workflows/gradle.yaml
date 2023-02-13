@@ -5,7 +5,7 @@ on:
 
 jobs:
   build-gradle-project:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: BrowserStack Env Setup
         uses: browserstack/github-actions/setup-env@master
