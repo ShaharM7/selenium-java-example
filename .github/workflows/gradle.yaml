@@ -24,7 +24,7 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
       - name: Build project using gradlew
-        run: ./gradlew build
+        run: ./gradlew build -x test
       - name: Test project using gradlew
         run: ./gradlew test
       - name: BrowserStackLocal Stop
