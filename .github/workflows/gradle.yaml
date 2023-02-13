@@ -7,8 +7,18 @@ jobs:
   build-gradle-project:
     runs-on: ubuntu-latest
     steps:
+      - name: BrowserStack Env Setup
+        uses: browserstack/github-actions/setup-env@master
+        with:
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      - name: BrowserStack Local Tunnel Setup
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: start
+          local-identifier: random
       - name: Checkout project sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Change wrapper permissions
